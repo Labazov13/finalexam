@@ -1,19 +1,27 @@
-﻿int a = 3;
-String[] array = new String[a];
+﻿
 
 String[] FillArray()
 {
-    for (int i = 0; i <= a; i++)
+    int a = 3;
+    String[] array = new String[a];
+    for (int i = 0; i < a; i++)
     {
         Console.Write("Введите " + i + " элемент массива: ");
-        //String element=Console.ReadLine()!;
         array[i] = Console.ReadLine()!;
     }
     return array;
 }
 
+void PrintArray(String[] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+}
 
-
+String[] array = FillArray();
+PrintArray(array);
 
 
 

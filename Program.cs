@@ -27,7 +27,15 @@ PrintArray(array);
 
 String[] CheckArray(String[] array)
 {
-    String[] NewArray = new String[array.GetLength(0)];
+    int CountElement = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            CountElement++;
+        }
+    }
+    String[] NewArray = new String[CountElement];
     for (int i = 0; i < array.GetLength(0); i++)
     {
         if (array[i].Length <= 3)

@@ -2,9 +2,10 @@
 
 String[] FillArray()
 {
-    int a = 3;
-    String[] array = new String[a];
-    for (int i = 0; i < a; i++)
+    System.Console.Write("Введите количество элементов массива: ");
+    int CountElements = int.Parse(Console.ReadLine()!);
+    String[] array = new String[CountElements];
+    for (int i = 0; i < CountElements; i++)
     {
         Console.Write("Введите " + i + " элемент массива: ");
         array[i] = Console.ReadLine()!;
@@ -23,6 +24,22 @@ void PrintArray(String[] array)
 String[] array = FillArray();
 PrintArray(array);
 
+
+String[] CheckArray(String[] array)
+{
+    String[] NewArray = new String[array.GetLength(0)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            NewArray[i] = array[i];
+        }
+    }
+    return NewArray;
+}
+
+String[] NewArray = CheckArray(array);
+PrintArray(NewArray);
 
 
 
